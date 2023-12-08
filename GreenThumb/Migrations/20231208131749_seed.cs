@@ -7,7 +7,7 @@
 namespace GreenThumb.Migrations
 {
     /// <inheritdoc />
-    public partial class Seed : Migration
+    public partial class seed : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -18,8 +18,7 @@ namespace GreenThumb.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -48,19 +47,19 @@ namespace GreenThumb.Migrations
 
             migrationBuilder.InsertData(
                 table: "plants",
-                columns: new[] { "Id", "Description", "Name" },
+                columns: new[] { "Id", "Name" },
                 values: new object[,]
                 {
-                    { 1, "Tomatoes: Versatile, juicy fruits rich in vitamins. Used in salads, sauces, and various dishes worldwide for their sweet-tangy flavor and vibrant colors.", "Tomato" },
-                    { 2, "Carrot is a biennial, belonging to the family Apiaceae, and is an important vegetable for its fleshy edible, colorful roots", "Carrot" },
-                    { 3, "Blueberris,Small, sweet, and purple. Packed with antioxidants, vitamins C and K. Good for the heart and brain. Used in baking and smoothies.", "Blueberry" },
-                    { 4, "Juicy, sweet, with fuzzy skin. Rich in vitamins A and C. Great fresh or in desserts.", "Peach" },
-                    { 5, "Lemons: Tangy citrus fruits rich in vitamin C. Used in cooking, baking, and beverages for a refreshing flavor", "Lemon" },
-                    { 6, "Coconuts: Large brown fruits with sweet water and creamy flesh. Used in cooking, desserts, and beverages. Rich in nutrients and versatile in various cuisines", "Coconut" },
-                    { 7, "Watermelon: Juicy, sweet fruit with red flesh and high water content. Refreshing and hydrating summer treat. Rich in vitamins and antioxidants. Enjoyed fresh or in beverages and salads", "Watermelon" },
-                    { 8, "Pears: Sweet, juicy fruits with a soft texture. Available in various colors. Rich in fiber, vitamins, and antioxidants. Enjoy fresh or in diverse recipes", "Pear" },
-                    { 9, "Grapes: Small, sweet fruits in various colors. Juicy and packed with vitamins and antioxidants. Eaten fresh, used in salads, or made into wine and raisins", "Grape" },
-                    { 10, "Oranges: Tangy-sweet citrus fruits, rich in vitamin C and antioxidants. Enjoy fresh, juiced, or in cooking for a refreshing taste and health benefits", "Orange" }
+                    { 1, "Tomato" },
+                    { 2, "Carrot" },
+                    { 3, "Blueberry" },
+                    { 4, "Peach" },
+                    { 5, "Lemon" },
+                    { 6, "Coconut" },
+                    { 7, "Watermelon" },
+                    { 8, "Pear" },
+                    { 9, "Grape" },
+                    { 10, "Orange" }
                 });
 
             migrationBuilder.InsertData(

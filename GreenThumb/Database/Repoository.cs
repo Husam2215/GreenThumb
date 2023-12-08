@@ -31,8 +31,11 @@ namespace GreenThumb.Database
 
         public async Task AddAsync(T entity) => await _dbSet.AddAsync(entity);
 
-        public async Task RemoveAsync(T entity) => _dbSet.Remove(entity);
-
+        public async Task RemoveAsync(T entity)
+        {
+            _dbSet.Remove(entity);
+            _context.SaveChanges();
+        }
         public async Task SaveChangesAsync() => await _context.SaveChangesAsync();
 
     }

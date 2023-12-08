@@ -161,10 +161,6 @@ namespace GreenThumb.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -177,61 +173,51 @@ namespace GreenThumb.Migrations
                         new
                         {
                             Id = 1,
-                            Description = "Tomatoes: Versatile, juicy fruits rich in vitamins. Used in salads, sauces, and various dishes worldwide for their sweet-tangy flavor and vibrant colors.",
                             Name = "Tomato"
                         },
                         new
                         {
                             Id = 2,
-                            Description = "Carrot is a biennial, belonging to the family Apiaceae, and is an important vegetable for its fleshy edible, colorful roots",
                             Name = "Carrot"
                         },
                         new
                         {
                             Id = 3,
-                            Description = "Blueberris,Small, sweet, and purple. Packed with antioxidants, vitamins C and K. Good for the heart and brain. Used in baking and smoothies.",
                             Name = "Blueberry"
                         },
                         new
                         {
                             Id = 4,
-                            Description = "Juicy, sweet, with fuzzy skin. Rich in vitamins A and C. Great fresh or in desserts.",
                             Name = "Peach"
                         },
                         new
                         {
                             Id = 5,
-                            Description = "Lemons: Tangy citrus fruits rich in vitamin C. Used in cooking, baking, and beverages for a refreshing flavor",
                             Name = "Lemon"
                         },
                         new
                         {
                             Id = 6,
-                            Description = "Coconuts: Large brown fruits with sweet water and creamy flesh. Used in cooking, desserts, and beverages. Rich in nutrients and versatile in various cuisines",
                             Name = "Coconut"
                         },
                         new
                         {
                             Id = 7,
-                            Description = "Watermelon: Juicy, sweet fruit with red flesh and high water content. Refreshing and hydrating summer treat. Rich in vitamins and antioxidants. Enjoyed fresh or in beverages and salads",
                             Name = "Watermelon"
                         },
                         new
                         {
                             Id = 8,
-                            Description = "Pears: Sweet, juicy fruits with a soft texture. Available in various colors. Rich in fiber, vitamins, and antioxidants. Enjoy fresh or in diverse recipes",
                             Name = "Pear"
                         },
                         new
                         {
                             Id = 9,
-                            Description = "Grapes: Small, sweet fruits in various colors. Juicy and packed with vitamins and antioxidants. Eaten fresh, used in salads, or made into wine and raisins",
                             Name = "Grape"
                         },
                         new
                         {
                             Id = 10,
-                            Description = "Oranges: Tangy-sweet citrus fruits, rich in vitamin C and antioxidants. Enjoy fresh, juiced, or in cooking for a refreshing taste and health benefits",
                             Name = "Orange"
                         });
                 });
