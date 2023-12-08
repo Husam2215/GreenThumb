@@ -12,7 +12,7 @@ namespace GreenThumb.Database
 
         public DbSet<Plants> plants { get; set; }
 
-        public DbSet<Instruction> instructions { get; set; }
+        public DbSet<Instructions> instructions { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -91,113 +91,113 @@ namespace GreenThumb.Database
                });
 
 
-            modelBuilder.Entity<Instruction>().HasData(
-            new Instruction
+            modelBuilder.Entity<Instructions>().HasData(
+            new Instructions
             {
                 Id = 1,
-                Instrtuction = "Need Sunight",
+                Instruction = "Need Sunight",
                 PlantId = 1,
             },
-            new Instruction
+            new Instructions
             {
                 Id = 2,
-                Instrtuction = "Need Sunlight",
+                Instruction = "Need Sunlight",
                 PlantId = 3,
             },
-            new Instruction
+            new Instructions
             {
                 Id = 3,
-                Instrtuction = "Need Sunlight",
+                Instruction = "Need Sunlight",
                 PlantId = 4,
             },
-            new Instruction
+            new Instructions
             {
                 Id = 4,
-                Instrtuction = "Need Sunlight",
+                Instruction = "Need Sunlight",
                 PlantId = 5,
             },
-            new Instruction
+            new Instructions
             {
                 Id = 5,
-                Instrtuction = "Need Sunlight",
+                Instruction = "Need Sunlight",
                 PlantId = 6,
             },
-            new Instruction
+            new Instructions
             {
                 Id = 6,
-                Instrtuction = "Need Sunlight",
+                Instruction = "Need Sunlight",
                 PlantId = 7,
             },
-            new Instruction
+            new Instructions
             {
                 Id = 7,
-                Instrtuction = "Need Sunlight",
+                Instruction = "Need Sunlight",
                 PlantId = 9,
             },
-            new Instruction
+            new Instructions
             {
                 Id = 8,
-                Instrtuction = "Need Sunlight",
+                Instruction = "Need Sunlight",
                 PlantId = 10,
             },
-            new Instruction
+            new Instructions
             {
                 Id = 9,
-                Instrtuction = "Need Water",
+                Instruction = "Need Water",
                 PlantId = 1,
             },
-            new Instruction
+            new Instructions
             {
                 Id = 10,
-                Instrtuction = "Need Water",
+                Instruction = "Need Water",
                 PlantId = 2,
             },
-            new Instruction
+            new Instructions
             {
                 Id = 11,
-                Instrtuction = "Need Water",
+                Instruction = "Need Water",
                 PlantId = 3,
             },
-            new Instruction
+            new Instructions
             {
                 Id = 12,
-                Instrtuction = "Need Water",
+                Instruction = "Need Water",
                 PlantId = 4,
             },
-            new Instruction
+            new Instructions
             {
                 Id = 13,
-                Instrtuction = "Need Water",
+                Instruction = "Need Water",
                 PlantId = 5,
             },
-            new Instruction
+            new Instructions
             {
                 Id = 14,
-                Instrtuction = "Need Water",
+                Instruction = "Need Water",
                 PlantId = 6,
             },
-            new Instruction
+            new Instructions
             {
                 Id = 15,
-                Instrtuction = "Need Water",
+                Instruction = "Need Water",
                 PlantId = 7,
             },
-            new Instruction
+            new Instructions
             {
                 Id = 16,
-                Instrtuction = "Need Water",
+                Instruction = "Need Water",
                 PlantId = 8,
             },
-            new Instruction
+            new Instructions
             {
                 Id = 17,
-                Instrtuction = "Need Water",
+                Instruction = "Need Water",
                 PlantId = 9,
             },
-            new Instruction
+            new Instructions
             {
                 Id = 18,
-                Instrtuction = "Need Water",
+                Instruction = "Need Water",
                 PlantId = 10,
             });
 

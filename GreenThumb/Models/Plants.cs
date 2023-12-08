@@ -10,6 +10,6 @@ namespace GreenThumb.Models
 
         public string Description { get; set; }
 
-        public List<Instruction> instructions { get; set; } = new();
+        public List<Instructions> instructions { get; set; } = new();
     }
 }

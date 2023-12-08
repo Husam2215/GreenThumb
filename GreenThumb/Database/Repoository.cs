@@ -24,6 +24,11 @@ namespace GreenThumb.Database
 
         public async Task<T> GetByIdAsync(int id) => await _dbSet.FindAsync(id);
 
+        public T? GetById(int id)
+        {
+            return _dbSet.Find(id);
+        }
+
         public async Task AddAsync(T entity) => await _dbSet.AddAsync(entity);
 
         public async Task RemoveAsync(T entity) => _dbSet.Remove(entity);

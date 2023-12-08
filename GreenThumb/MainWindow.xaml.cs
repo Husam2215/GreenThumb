@@ -11,6 +11,7 @@ namespace GreenThumb
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
@@ -41,13 +42,21 @@ namespace GreenThumb
 
         private void btnDetails_Click(object sender, RoutedEventArgs e)
         {
-            PlantDetails PlantDetailsWindow = new();
-            PlantDetailsWindow.Show();
-            Close();
+            ListViewItem selectedItem = (ListViewItem)lstPlant.SelectedItem;
+            if (selectedItem != null)
+            {
+                // Kolla vad som är selectat
+                Plants selectedPlant = (Plants)selectedItem.Tag;
 
-            PlantDetails plantDetails = new PlantDetails();
-            plantDetails.ShowDialog();
-
+                // Skicka den plantan som är selectad
+                PlantDetails PlantDetailsWindow = new(/*selectedPlant.Id*/selectedPlant);
+                PlantDetailsWindow.Show();
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Please choose an item");
+            }
         }
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)
@@ -78,6 +87,30 @@ namespace GreenThumb
                     lstPlant.Items.Add(item);
                 }
             }
+        }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            ListViewItem selectedItem = (ListViewItem)lstPlant.SelectedItem;
+            if (selectedItem != null)
+            {
+                lstPlant.Items.Remove(selectedItem);
+
+                using (AppDbcontext context = new())
+                {
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Choose an item");
+            }
+
+        }
+
+        private void lstPlant_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

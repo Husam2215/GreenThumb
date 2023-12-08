@@ -1,4 +1,8 @@
-﻿using System.Windows;
+﻿using GreenThumb.Database;
+using GreenThumb.Models;
+using System.Linq;
+using System.Windows;
+using System.Windows.Controls;
 
 namespace GreenThumb
 {
@@ -7,13 +11,64 @@ namespace GreenThumb
     /// </summary>
     public partial class PlantDetails : Window
     {
-        public PlantDetails()
+        private Plants? plant;
+
+        public PlantDetails(/*int plantId*/Plants selectedPlant)
         {
             InitializeComponent();
+            using (AppDbcontext context = new())
+            {
+                lblPlantName.Content = selectedPlant.Name;
+
+                Repoository<Plants> plant = new(context);
+                Repoository<Instructions> instruction = new(context);
+
+                var allInstructions = instruction.GetAll();
+
+                var selectedInstructions = allInstructions.Where(p => p.PlantId == selectedPlant.Id);
+
+                foreach (var x in selectedInstructions)
+                {
+                    ListViewItem item = new ListViewItem();
+                    item.Tag = x;
+                    item.Content = x.Instruction;
+                    lstPlantDetails.Items.Add(item);
+                }
+            }
+            //using (AppDbcontext context = new())
+            //{
+            //    Repoository<Plants> plantRepo = new(context);
+
+            //    plant = plantRepo.GetById(plantId);
+
+            //    lblPlantName.Content = plant!.Name;
 
 
+            //}
 
+        }
 
+        private void GetInstructions(Plants selectedPlant)
+        {
+            //using (AppDbcontext context = new())
+            //{
+            //    lblPlantName.Content = selectedPlant.Name;
+
+            //    Repoository<Plants> plant = new(context);
+            //    Repoository<Instructions> instruction = new(context);
+
+            //    var allInstructions = instruction.GetAll();
+
+            //    var selectedInstructions = allInstructions.Where(p => p.PlantId == selectedPlant.Id);
+
+            //    foreach (var x in selectedInstructions)
+            //    {
+            //        ListViewItem item = new ListViewItem();
+            //        item.Tag = x;
+            //        item.Content = x.Instruction;
+            //        lstPlantDetails.Items.Add(item);
+            //    }
+            //}
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
